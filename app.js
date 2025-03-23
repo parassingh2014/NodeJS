@@ -24,13 +24,20 @@
 
 // server.listen(5000)
 
-//npm
+//npm run any script from package.json
+//npm install any package   -D for dev       npm init -y for package.json file
 
 
 
+const { Console } = require('console')
 const _ = require('lodash')
 const items = [1,[2,3, 4]]
 const nwItems = _.flatMapDeep(items)
 
 //Package Json is important when w start sharing he project with other devs
+// for dev -D
+console.log("stor")
+
+
+//Event loop offloads some time onuming business and run all other operations.  invoke the callback
 
