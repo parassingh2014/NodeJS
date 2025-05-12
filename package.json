@@ -14,7 +14,7 @@
   "dependencies": {
     "lodash": "^4.17.21"
   },
-  "devDependencies": {
-    "np": "^3.1.9"
+  "devDependencies": {    
+   "np": "^7.6.0"
   }
 }
