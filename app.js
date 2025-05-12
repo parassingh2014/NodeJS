@@ -1,25 +1,19 @@
 
-const http =  require('http')
-//Events : Imp
-var event = require('events')
-var eventEmit = event.EventEmitter()
-
-var funcHandler = () => {
-    console.log('Event Fired')
-}
-eventEmit.on('eventt', funcHandler)
-eventEmit.emit('eventt')
-
-const server = http.createServer((req, res) => {
-res.write()
-}).listen(5000)
-
-// or
-
-const server2 = http.createServer()
-
-server2.on('request', (req, res)=>{
-    console.log('Request Received')
-} )
-
 //streams
+// Read, write duplex, transform (Data sequencely like JSON)
+
+var {createReadStream} = require('fs')
+var http = require('http')
+
+var serv = http.createServer((req, res)=>{
+    var rs = createReadStream('./content/first.txt')
+        rs.on('open', (result) => {
+            res.end(result)
+        })
+    var rs = createReadStream('./content/first.txt')
+        rs.on('error', (err) => {
+            res.end(err)
+        })
+})
+
+serv.listen(5000)
