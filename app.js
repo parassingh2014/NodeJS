@@ -1,22 +1,23 @@
-// const express = require('express')
-const http = require('http')
-const {readFileSync} = require('fs')
-//console.log("Express")
+const express = require('express')
+const app = express() //invoking
+const path = require('path')
 
-const homePage = readFileSync('./index.html')
+// app.get('/', (req, res) =>{
+//     res.send('Hello World')
+// })
+//static built in middleware
+app.use(express.static('./public'))
+app.listen(5000,()=>{
+    console.log("server is running on port 5000")
+}) //callback function
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, ''))
+})
+app.all('*', (req, res) => {
+    res.status(404).send('Not found')
+})
+//app.get and many more
 
-const server = http.createServer((req, resp) => {
-    //console.log(req.url)
-if(req.url === '/'){
-    resp.writeHead(200, {'content-type' : 'text/html'})
- resp.write(homePage)
-
-resp.end('Headers and body have been sent')
-}
-else{
- resp.writeHead(400, {'content-type' : 'text/html'})
- resp.write("Error")
- resp.end()
-}
-   
-}).listen(5001)
+//API vs SSR:
+//API: Application Programming Interface, SSR: Server side rendering
+//Json
