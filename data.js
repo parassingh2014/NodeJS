@@ -7,4 +7,12 @@ const productData = [
 
 ]
 
-module.exports = productData
+const people = [
+{id : 1, name: "John"},
+{id : 2, name: "Jdfhn"},
+{id : 3, name: "Smith dgs"},
+{id : 4, name: "sdf sTest"},
+
+]
+
+module.exports = {productData, people}
