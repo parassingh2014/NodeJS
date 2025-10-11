@@ -43,7 +43,7 @@ app.delete('/api/DeletePeople/:id', (req, res) =>{
 var prod = productData.people.find(x=>x.id === Number(id))
 if(prod){
     var DeletedProdList = productData.people.filter(x=>x.id !== Number(id))
-    res.json({success : true, data: DeletedProdList})
+    return res.json({success : true, data: DeletedProdList})
 }
 res.json({success : false, message : `Error`})
 })
