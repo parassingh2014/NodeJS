@@ -1,13 +1,9 @@
 const express = require('express')
-const productData = require('../data');
+const {getPeople} = require('../controllers/people');
 const router = express.Router()
 
 // import cc from '../data'
-
-router.get('/', (req, res) =>{
-
-    return res.json({success : true, data : productData.people})
-})
+ router.get('/',  getPeople)
 
 router.post('/post', (req, res) => {
 const {name} = req.body

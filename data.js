@@ -14,5 +14,11 @@ const people = [
 {id : 4, name: "sdf sTest"},
 
 ]
+const movies = [
 
-module.exports = {productData, people}
+{id : 1, description : 'Movie 1'},
+{id: 2, description :  'Movie 2'}
+
+]
+
+module.exports = {productData, people, movies}
